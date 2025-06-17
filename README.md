@@ -9,7 +9,4 @@ git clone https://github.com/DonCozuuko/List-Table-Files.git
 make
 ```
 ## **Demonstration:**
-![Screenshot (3888)](https://github.com/user-attachments/assets/580bab83-2d18-4e13-b490-d6559fb45c5f)
-
-
-
+![Screenshot (3888)](https://github.com/user-attachments/assets/f7cbf3d7-7d40-4ed3-8fa3-c22e2f3a53d9)
