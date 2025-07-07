@@ -1,2 +1,2 @@
 main:
-	gcc myLS.c line_characters.c -o s
+	gcc myLS.c line_characters.c -o tablefiles
