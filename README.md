@@ -1,7 +1,7 @@
 # List-Table-Files ~ts 
 A CLI tool that displays directory contents of the current working directory into a neat little table. I honestly felt like Tony Stark building the mini arc reactor in the cave in Iron Man 1 while programming this project. Making my own tools, albeit for simple tasks, got me feeling like that one gif of Tony Stark hammering on the anvil.
 
-![](res/iron-man-iron-man-hammer.gif)
+![iron-man-iron-hammer](res/iron-man-iron-man-hammer.gif)
 
 ## Features
 - Table displays the Filename, Filesize, Type (File or Directory), and the Date last Modified (Month/Day/Year Time).
@@ -11,7 +11,7 @@ A CLI tool that displays directory contents of the current working directory int
 
 ## Demo
 
-![](res/tablefiles_demo.png)
+![tablefiles_demo](res/tablefiles_demo.png)
 
 ## Usage
 ```
