@@ -142,10 +142,31 @@ void fillInTableRow(struct dirent *entry, int maxFileNameLen) {
     if (stat(entry->d_name, &size) != 0) {
         perror("stat");
     }
-    char fileSizeBuff[15];
-    snprintf(fileSizeBuff, sizeof(fileSizeBuff), "%lld", (long long)size.st_size);
-    printf("%s B", fileSizeBuff);
-    printPadding(8 - strlen(fileSizeBuff) - 2);
+    char fileSizeBuff[10];
+    size_t fileSizeRaw = size.st_size;
+    if (fileSizeRaw >= 0 && fileSizeRaw <= 999) {
+        snprintf(fileSizeBuff, sizeof(fileSizeBuff), "%lld", (long long)size.st_size);
+        printf("%s B", fileSizeBuff);
+        printPadding(8 - strlen(fileSizeBuff) - 2);
+    }
+    else if (fileSizeRaw >= 1000 && fileSizeRaw <= 999999) {
+        fileSizeRaw /= 1000;
+        snprintf(fileSizeBuff, sizeof(fileSizeBuff), "%d", fileSizeRaw);
+        printf("%s KB", fileSizeBuff);
+        printPadding(8 - strlen(fileSizeBuff) - 3);
+    }
+    else if (fileSizeRaw >= 1000000 && fileSizeRaw <= 999999999) {
+        fileSizeRaw /= 1000000;   
+        snprintf(fileSizeBuff, sizeof(fileSizeBuff), "%lld", fileSizeRaw);
+        printf("%s MB", fileSizeBuff);
+        printPadding(8 - strlen(fileSizeBuff) - 3);
+    }
+    else if (fileSizeRaw >= 1000000000 && fileSizeRaw <= 999999999999) {
+        fileSizeRaw /= 1000000000;   
+        snprintf(fileSizeBuff, sizeof(fileSizeBuff), "%lld", fileSizeRaw);
+        printf("%s GB", fileSizeBuff);
+        printPadding(8 - strlen(fileSizeBuff) - 3);
+    }
     
     vertLine();  // third cell
     struct stat type;
